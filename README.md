@@ -120,7 +120,8 @@ const char* password = "**********";
 [image showing Tools -> Ports]
 
 * I connect my ESP32 to my computer and click the upload button.
-* Once uploading is completed successfully, I go to Tools -> Serial Monitor in the Arduino IDE and set the baud rate to 115200.
+* Once uploading is completed successfully, I need to disconnect the IO0 and GND ports on the ESP32.
+* Then, I go to Tools -> Serial Monitor in the Arduino IDE and set the baud rate to 115200.
 * I then press the reset button on the back of the ESP32. The serial monitor should log a short readout and then give the IP address of the ESP32.
 
 [image showing serial monitor]
