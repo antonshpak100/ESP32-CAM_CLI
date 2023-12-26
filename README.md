@@ -202,8 +202,7 @@ optional arguments:
   -open, --open_file    (For photo/video) Open file after saving. Note that this function uses the system command prompt to open files with the default application - check process_output_params.py if it isn't working in your OS.
   -d, --show_debug      Show parsed arguments as output for debugging.
 ```
-* All parameters except `--exposure` and `--horizontal_flip` persist until the ESP32 is reset or powered off.
-* `--exposure` and `--horizontal_flip` reset to defaults every time the program is run.
+* All parameters except `--flash`, `--exposure`, `--horizontal_flip`, and `--show_debug` persist until the ESP32 is reset or powered off.
 
 ### Original features
 * Most features of the program (e.g. changing quality, resolution, contrast etc.) can be done in the ExampleWebServer GUI or can be done with existing programs. However, I haven't seen the following features in other code written to control the ESP32-CAM and so these are fresh implementations.
@@ -219,6 +218,129 @@ optional arguments:
 * The program rewrites the output video file from the temporary file with this corrected framerate.
 
 ## Examples
+
+#### Example 1:
+* Basic example: taking a picture with 800x600 resolution, max quality, adjusting brightness/contrast, saving as banana1.jpg
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -r 9 -q 100 -c 1 -s 1 -o banana1
+```
+> ```
+>Selected function: photo
+>Photo saved to output/banana1.jpg
+> ```
+>![banana1.jpg]
+
+#### Example 2:
+* Decreasing contrast and saturation, increasing brightness
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -r 9 -q 100 -c -2 -s -2 -b 1 -o banana2
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana2.jpg
+>```
+>![banana2.jpg]
+
+#### Example 3:
+* Increasing resolution, resetting brightness, contrast and saturation
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -r 12 -q 100 -c 0 -s 0 -b 0 -o banana3
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana3.jpg
+>```
+>![banana3.jpg]
+
+#### Example 4:
+* Setting exposure to max
+* Notice that other parameters (quality, resolution etc.) persist from last time they were specified
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -e 100 -o banana4 
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana4.jpg
+>```
+>![banana4.jpg]
+
+#### Example 5:
+* Setting quality to min, exposure to max
+* Note that we can use either the short flag (as in `-e`) or the full flag (as in `--exposure`) to set parameters
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo --exposure 100 -q 0 -o banana5 
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana5.jpg
+>```
+>![banana5.jpg]
+
+#### Example 6:
+* Setting exposure to max, quality to max, increasing resolution, turning flash on
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo --exposure 100 -q 100 -r12 -f on -o banana6 
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana6.jpg
+>```
+>![banana6.jpg]
+
+#### Example 7:
+* Showing debug output (parsed parameters from user input)
+* Observe that flash resets to flash off and exposure resets to auto while other parameters stay the same
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -d -o banana7      
+```
+>```
+>Namespace(ip='10.0.0.18', camera_function='photo', resolution=None, quality=None, flash=None, exposure=None, brightness=None, >contrast=None, saturation=None, horizontal_flip=False, output_location='banana7', open_file=False, show_debug=True)
+>
+>Selected function: photo
+>Photo saved to output/banana7.jpg
+>```
+>![banana7.jpg]
+
+#### Example 8:
+* Increasing resolution, flipping image horizontally, setting flash to auto, opening image
+* Observe that the order of the flags does not matter
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -r 13 -hf -o banana8 -f auto -open 
+```
+>```
+>Selected function: photo
+>Photo saved to output/banana8.jpg
+>```
+>![banana8.jpg]
+
+#### Example 9:
+* Recording a video, lowering resolution, opening the video
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 video -r 8 -o bananaVideo -open
+```
+>```
+>Selected function: video
+>Press S to stop recording.
+```
+S
+```
+>```
+>Video saved to output/bananaVideo.avi
+>```
+>![bananaVideo.avi (converted to gif)](link)
+>
+>(bananaVideo.avi converted to gif)
+
+#### Example 10:
+* Launching stream setting resolution to SVGA, increasing saturation and contrast, flipping horizontally, showing debug output
+(venv) anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 stream -r 9 -s 2 -c 2 -hf -d -o stream -open
+
+Namespace(ip='10.0.0.18', camera_function='stream', resolution='9', quality=None, flash=None, exposure=None, brightness=None, contrast='2', saturation='2', horizontal_flip=True, output_location='stream', open_file=True, show_debug=True)
+
+Selected function: stream
+Stream will now open in a new window.
+Press S to end stream.
+Stream is not saved. Do not specify -o or -open arguments for stream.
 
 ## Potential improvements
 
