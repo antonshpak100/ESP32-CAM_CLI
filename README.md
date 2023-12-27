@@ -327,7 +327,7 @@ S
 >```
 >Video saved to output/bananaVideo.avi
 >```
->![bananaVideo.avi (converted to gif)](https://github.com/antonshpak100/Markdown-test/blob/main/bananaVideo.gif?raw=true)
+><img src="https://github.com/antonshpak100/Markdown-test/blob/main/bananaVideo.gif" alt="bananaVideo.avi (converted to gif)" width="640">
 >
 >(bananaVideo.avi converted to gif)
 
