@@ -65,9 +65,29 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 ### Hardware setup
 
-* To set up the hardware, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
+* To set up the hardware, I first connect the OV2640 camera module to the ESP32
+* I pull open the little hinged tab below the SD card slot on the ESP32, then slide the camera module's connector all the way in before closing the hinged tab again.
+* Then, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
 
 [image]
+
+
+| Origin	    | Origin pin |	Destination pin	| Destination     |
+| -----------| ---------- | --------------- | --------------- |
+| ESP-32-CAM |	5V	        | VCC	            | FTDI Programmer |
+| ESP-32-CAM	| GND	       | GND	            | FTDI Programmer |
+| ESP-32-CAM	| U0R	       | TX	             | FTDI Programmer |
+| ESP-32-CAM	| U0T	       | RX	             | FTDI Programmer |
+| ESP-32-CAM	| IO0	       | GND	            | ESP-32-CAM      |
+
+
+
+ESP32-CAM	FTDI Programmer
+GND	GND
+5V	VCC (5V)
+U0R	TX
+U0T	RX
+GPIO 0	GND
 
 * After this, I make sure the FTDI programmer is set to 5V output (this is controlled by the jumper across the 3 upward pins).
 * Once I have everything connected, I plug the FTDI programmer into my laptop via the Mini-USB port, verifying that the LED indicator light turns on.
