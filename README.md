@@ -1,7 +1,7 @@
 # ESP32-CAM_CLI
 
 Command-line interface for saving photos, videos, and launching live streams from an ESP32 microcontroller with camera module. 
-Works by using Python scripts to make calls to the ExampleWebServer for the ESP32-CAM (available through the Arduino IDE).
+Works by using Python scripts to make calls to the example CameraWebServer for the ESP32-CAM (available through the Arduino IDE).
 
 The program has the following basic capabilities:
 * Capturing photos, videos and saving them to a specified directory on a host system
@@ -83,11 +83,11 @@ Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
 
 ### Uploading code to the ESP32
 
-* For this project, I am using the ExampleWebServer for the ESP32-CAM. This can be found by going to File -> Examples -> ESP32 -> Camera -> CameraWebServer.
+* For this project, I am using the example CameraWebServer for the ESP32-CAM. This can be found by going to File -> Examples -> ESP32 -> Camera -> CameraWebServer.
 
 <img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/7-CameraWebServer.png?raw=true" alt="image showing CameraWebServer" width="640">
 
-* I've also linked the ExampleWebServer files in this repo [here](https://github.com/antonshpak100/ESP32-CAM_CLI/tree/main/CameraWebServer).
+* I've also linked the example CameraWebServer files in this repo [here](https://github.com/antonshpak100/ESP32-CAM_CLI/tree/main/CameraWebServer).
 * I need to modify the code slightly to make it work in my situation.
 * First, I need to select the correct camera.
 * Within the CameraWebServer.ino file, I comment out CAMERA_MODEL_ESP_EYE and uncomment CAMERA_MODEL_AI_THINKER:
@@ -217,7 +217,7 @@ optional arguments:
 * All parameters except `--flash`, `--exposure`, `--horizontal_flip`, and `--show_debug` persist until the ESP32 is reset or powered off.
 
 ### Original features
-* Most features of the program (e.g. changing quality, resolution, contrast etc.) can be done in the ExampleWebServer GUI or can be done with existing programs. However, I haven't seen the following features in other code written to control the ESP32-CAM and so these are fresh implementations.
+* Most features of the program (e.g. changing quality, resolution, contrast etc.) can be done in the example CameraWebServer GUI or can be done with existing programs. However, I haven't seen the following features in other code written to control the ESP32-CAM and so these are fresh implementations.
 #### Auto flash
 * By specifying `-f auto` when running the program, auto flash is enabled.
 * This feature captures a test image, reads its average luminosity, and then enables the flash automatically if the image is too dark.
@@ -368,7 +368,7 @@ S
 
 ## Potential improvements
 * Rewriting ESP32 web server code
-  * Instead of using the existing ExampleWebServer Arduino code, I could write an image capture program and web server for the ESP32 from scratch
+  * Instead of using the existing example CameraWebServer Arduino code, I could write an image capture program and web server for the ESP32 from scratch
   * By writing my own code, I would be able to optimize it specifically for my program
 * Adding SD card save feature
   * The ESP32 has the capability to write images directly to an SD card
