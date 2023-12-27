@@ -53,7 +53,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 [image showing  Tools -> Board -> Board Manager]
 
-* Then, I search for 'esp32' and install the esp32 package by Expressif. I have version 2.0.14 installed.
+* Then, I search for 'esp32' and install the esp32 package by Expressif (specifically, I install version 2.0.14).
 
 [image showing package install]
 
@@ -65,12 +65,12 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 ### Hardware setup
 
-* To set up the hardware, I connected the pins on the ESP32 with the pins on the FTDI programmer as follows:
+* To set up the hardware, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
 
 [image]
 
-* Make sure the FTDI programmer is set to 5V output (this is controlled by the jumper across the 3 upward pins).
-* Once I had everything connected, I plugged the FTDI programmer into my laptop via the Mini-USB port and checked that the LED indicator light was on.
+* After this, I make sure the FTDI programmer is set to 5V output (this is controlled by the jumper across the 3 upward pins).
+* Once I have everything connected, I plug the FTDI programmer into my laptop via the Mini-USB port, verifying that the LED indicator light turns on.
 
 ### Uploading code to the ESP32
 
@@ -120,7 +120,7 @@ const char* password = "**********";
 [image showing Tools -> Ports]
 
 * I connect my ESP32 to my computer and click the upload button.
-* Once uploading is completed successfully, I need to disconnect the IO0 and GND ports on the ESP32.
+* Once uploading is completed successfully, I need to disconnect the IO0 and GND ports on the ESP32 to exit the flash mode.
 * Then, I go to Tools -> Serial Monitor in the Arduino IDE and set the baud rate to 115200.
 * I then press the reset button on the back of the ESP32. The serial monitor should log a short readout and then give the IP address of the ESP32.
 
