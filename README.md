@@ -33,9 +33,6 @@ The program has the following basic capabilities:
 ### My hardware
 * For this project, I am using an ESP32-CAM microcontroller (ESP-32S board with an OV2640 camera module), an FTDI programmer with a TTL serial to Mini-USB adapter, and 5 jumper wires to connect the two.
 
-[image of ESP32 CAM]
-[image of FTDI programmer] 
-
 ### Software installation and setup
 * Before I can set up the ESP32 hardware, I need to install and set up software to be able to upload code to my ESP32 microcontroller. To do this, I first install the [Arduino IDE](https://www.arduino.cc/en/software) (specifically, I am using version 1.8.19, but versions 2.x.x should work also). 
 
@@ -71,7 +68,6 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 
 [image]
 
-
 | Origin	    | Origin pin |	Destination pin	| Destination     |
 | -----------| ---------- | --------------- | --------------- |
 | ESP-32-CAM |	5V	        | VCC	            | FTDI Programmer |
@@ -80,21 +76,15 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 | ESP-32-CAM	| U0T	       | RX	             | FTDI Programmer |
 | ESP-32-CAM	| IO0	       | GND	            | ESP-32-CAM      |
 
-
-
-ESP32-CAM	FTDI Programmer
-GND	GND
-5V	VCC (5V)
-U0R	TX
-U0T	RX
-GPIO 0	GND
-
 * After this, I make sure the FTDI programmer is set to 5V output (this is controlled by the jumper across the 3 upward pins).
 * Once I have everything connected, I plug the FTDI programmer into my laptop via the Mini-USB port, verifying that the LED indicator light turns on.
 
 ### Uploading code to the ESP32
 
 * For this project, I am using the ExampleWebServer for the ESP32-CAM. This can be found by going to File -> Examples -> ESP32 -> Camera -> CameraWebServer.
+
+[image showing CameraWebServer]
+
 * I've also linked the ExampleWebServer files in this repo [here](#insert.link.here).
 * I need to modify the code slightly to make it work in my situation.
 * First, I need to select the correct camera.
