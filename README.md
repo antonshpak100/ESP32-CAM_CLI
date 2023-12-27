@@ -67,6 +67,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 * Then, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
 
 [image]
+Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
 
 | Origin	    | Origin pin |	Destination pin	| Destination     |
 | -----------| ---------- | --------------- | --------------- |
