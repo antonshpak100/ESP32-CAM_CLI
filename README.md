@@ -67,7 +67,8 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 * Then, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
 
 <img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/6-wiring-setup.png?raw=true" alt="image showing wiring" width="640">
-Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
+
+Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/  
 
 | Origin	    | Origin pin |	Destination pin	| Destination     |
 | -----------| ---------- | --------------- | --------------- |
@@ -84,7 +85,7 @@ Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
 
 * For this project, I am using the ExampleWebServer for the ESP32-CAM. This can be found by going to File -> Examples -> ESP32 -> Camera -> CameraWebServer.
 
-[image showing CameraWebServer]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/7-CameraWebServer.png?raw=true" alt="image showing CameraWebServer" width="640">
 
 * I've also linked the ExampleWebServer files in this repo [here](#insert.link.here).
 * I need to modify the code slightly to make it work in my situation.
@@ -128,14 +129,14 @@ const char* password = "**********";
 * Finally, the code is ready to upload.
 * With the ESP32 plugged in, I select the correct port under Tools -> Ports
 
-[image showing Tools -> Ports]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/9-Selecting-port.png?raw=true" alt="image showing Tools -> Ports" width="640">
 
 * I connect the ESP32 to my computer and click the upload button.
 * Once uploading is completed successfully, I need to disconnect the IO0 and GND ports on the ESP32 from each other to exit the flash mode.
 * Then, I go to Tools -> Serial Monitor in the Arduino IDE and set the baud rate to 115200.
 * I then press the reset button on the back of the ESP32. The serial monitor should log a short readout and then give the IP address of the ESP32.
 
-[image showing serial monitor]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/8-Serial-monitor.png?raw=true" alt="image showing serial monitor" width="640">
 
 * This IP address is required to run the CLI program.
 
@@ -239,7 +240,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana1.jpg
 > ```
->![banana1.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana1.jpg?raw=true" alt="banana1.jpg" width="640">
 
 #### Example 2:
 * Decreasing contrast and saturation, increasing brightness
@@ -250,7 +251,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana2.jpg
 >```
->![banana2.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana2.jpg?raw=true" alt="banana2.jpg" width="640">
 
 #### Example 3:
 * Increasing resolution, resetting brightness, contrast and saturation
@@ -261,7 +262,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana3.jpg
 >```
->![banana3.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana3.jpg?raw=true" alt="banana3.jpg" width="640">
 
 #### Example 4:
 * Setting exposure to max
@@ -273,7 +274,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana4.jpg
 >```
->![banana4.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana4.jpg?raw=true" alt="banana4.jpg" width="640">
 
 #### Example 5:
 * Setting quality to min, exposure to max
@@ -285,7 +286,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana5.jpg
 >```
->![banana5.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana5.jpg?raw=true" alt="banana5.jpg" width="640">
 
 #### Example 6:
 * Setting exposure to max, quality to max, increasing resolution, turning flash on
@@ -296,7 +297,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana6.jpg
 >```
->![banana6.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana6.jpg?raw=true" alt="banana6.jpg" width="640">
 
 #### Example 7:
 * Showing debug output (parsed parameters from user input)
@@ -310,7 +311,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana7.jpg
 >```
->![banana7.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana7.jpg?raw=true" alt="banana7.jpg" width="640">
 
 #### Example 8:
 * Increasing resolution, flipping image horizontally, setting flash to auto, opening image
@@ -322,7 +323,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 >Selected function: photo
 >Photo saved to output/banana8.jpg
 >```
->![banana8.jpg]
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/banana8.jpg?raw=true" alt="banana8.jpg" width="640">
 
 #### Example 9:
 * Recording a video, lowering resolution, opening the video
@@ -353,10 +354,11 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 stream 
 >
 >Selected function: stream
 >Stream will now open in a new window.
->
->![Example of stream window](link)
 >Press S to end stream.
 >```
+><img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/examples/bananaStream.png?raw=true" alt="Example of stream" width="640">
+>
+>(example of stream window)
 ```
 S
 ```
