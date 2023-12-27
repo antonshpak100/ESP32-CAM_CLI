@@ -154,7 +154,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py [ip] [camera_func
 where `ip` is the IP address of the ESP32, `camera_function` is a basic camera operation (photo, video, or stream) and `-parameters` are parameters for the camera operation and output. These will be described in the next section.
 
 ### Parameters and arguments
-* For a full list of parameters and arguments, we can run the program with the `-h` tag to get a help message:
+* For a full list of parameters and arguments, I can run the program with the `-h` tag to get a help message:
 ```
 anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py -h
 ```
@@ -266,7 +266,7 @@ anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo -
 
 #### Example 5:
 * Setting quality to min, exposure to max
-* Note that we can use either the short flag (as in `-e`) or the full flag (as in `--exposure`) to set parameters
+* Note that I can use either the short flag (as in `-e`) or the full flag (as in `--exposure`) to set parameters
 ```
 anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 photo --exposure 100 -q 0 -o banana5 
 ```
@@ -327,20 +327,45 @@ S
 >```
 >Video saved to output/bananaVideo.avi
 >```
->![bananaVideo.avi (converted to gif)](link)
+>![bananaVideo.avi (converted to gif)](https://github.com/antonshpak100/Markdown-test/blob/main/bananaVideo.gif?raw=true)
 >
 >(bananaVideo.avi converted to gif)
 
 #### Example 10:
-* Launching stream setting resolution to SVGA, increasing saturation and contrast, flipping horizontally, showing debug output
-(venv) anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 stream -r 9 -s 2 -c 2 -hf -d -o stream -open
-
-Namespace(ip='10.0.0.18', camera_function='stream', resolution='9', quality=None, flash=None, exposure=None, brightness=None, contrast='2', saturation='2', horizontal_flip=True, output_location='stream', open_file=True, show_debug=True)
-
-Selected function: stream
-Stream will now open in a new window.
-Press S to end stream.
-Stream is not saved. Do not specify -o or -open arguments for stream.
+* Launching live stream, setting resolution to SVGA, increasing saturation and contrast, flipping horizontally, showing debug output.
+* Note that `-o` and `-open` are not necessary since the stream is not saved.
+```
+anton@antons-computer ESP32-CAM_CLI % python3 ESP32-CAM_CLI.py 10.0.0.18 stream -r 9 -s 2 -c 2 -hf -d -o stream -open
+```
+>```
+>Namespace(ip='10.0.0.18', camera_function='stream', resolution='9', quality=None, flash=None, exposure=None, brightness=None, >contrast='2', saturation='2', horizontal_flip=True, output_location='stream', open_file=True, show_debug=True)
+>
+>Selected function: stream
+>Stream will now open in a new window.
+>
+>![Example of stream window](link)
+>Press S to end stream.
+>```
+```
+S
+```
+>```
+>Stream is not saved. Do not specify -o or -open arguments for stream.
+>```
 
 ## Potential improvements
-
+* Rewriting ESP32 web server code
+  * Instead of using the existing ExampleWebServer Arduino code, I could write an image capture program and web server for the ESP32 from scratch
+  * By writing my own code, I would be able to optimize it specifically for my program
+* Adding SD card save feature
+  * The ESP32 has the capability to write images directly to an SD card
+  * This would reduce reliance on WiFi image transfer and processing on the host system
+* Reworking video recording function
+  * Currently, the video recording function records frames as they come from a live stream
+  * Although this captures the largest possible amount of frames, the interval between frames is uneven
+  * A typical video camera works by taking pictures at precise intervals
+  * While it would come with additional challenges, I could try to apply this method to the ESP32
+* Adding ability to interface with the ESP32 via bluetooth
+  * The ESP32 is bluetooth-capable
+  * This would allow the program to function without a WiFi connection
+  * Although live streaming would not be possible, it may be possible to transfer images or even video via bluetooth
