@@ -87,7 +87,7 @@ Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
 
 <img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/7-CameraWebServer.png?raw=true" alt="image showing CameraWebServer" width="640">
 
-* I've also linked the ExampleWebServer files in this repo [here](#insert.link.here).
+* I've also linked the ExampleWebServer files in this repo [here](#https://github.com/antonshpak100/ESP32-CAM_CLI/tree/main/CameraWebServer).
 * I need to modify the code slightly to make it work in my situation.
 * First, I need to select the correct camera.
 * Within the CameraWebServer.ino file, I comment out CAMERA_MODEL_ESP_EYE and uncomment CAMERA_MODEL_AI_THINKER:
