@@ -41,22 +41,22 @@ The program has the following basic capabilities:
 
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-[image showing Arduino -> Preferences]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/1-Going-into-preferences.png?raw=true" alt="image showing Arduino -> Preferences" width="640">
 
-[image showing Additional Boards Manager URLs]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/2-Adding-JSON.png?raw=true" alt="image showing Additional Boards Manager URLs" width="640">
 
 * Once this is done, I still need to install the ESP32 board manager package for the Arduino IDE.
 * To do this, I go to Tools -> Board -> Boards Manager. 
 
-[image showing  Tools -> Board -> Boards Manager]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/3-Going-to-boards-manager.png?raw=true" alt="image showing Tools -> Board -> Boards Manager" width="640">
 
 * Then, I search for 'esp32' and install the esp32 package by Expressif (specifically, I install version 2.0.14).
 
-[image showing package install]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/4-Installing-ESP32-package.png?raw=true" alt="image showing package install" width="640">
 
 * After this, I go to Tools -> Board -> ESP32 Arduino and select the 'AI Thinker ESP32-CAM' board from the list.
 
-[image showing selection]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/5-Selecting-AI-Thinker-ESP32-CAM.png?raw=true" alt="image showing selection" width="640">
 
 * Now, I have installed and set up all the necessary software to upload code to the ESP32.
 
@@ -66,7 +66,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 * I pull open the little hinged tab below the SD card slot on the ESP32, then slide the camera module's connector all the way in before closing the hinged tab again.
 * Then, I connect the pins on the ESP32 with the pins on the FTDI programmer as follows:
 
-[image]
+<img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/6-wiring-setup.png?raw=true" alt="image showing wiring" width="640">
 Image source: https://randomnerdtutorials.com/program-upload-code-esp32-cam/
 
 | Origin	    | Origin pin |	Destination pin	| Destination     |
