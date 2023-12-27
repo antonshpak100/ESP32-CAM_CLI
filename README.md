@@ -49,9 +49,9 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 [image showing Additional Boards Manager URLs]
 
 * Once this is done, I still need to install the ESP32 board manager package for the Arduino IDE.
-* To do this, I go to Tools -> Board -> Board Manager. 
+* To do this, I go to Tools -> Board -> Boards Manager. 
 
-[image showing  Tools -> Board -> Board Manager]
+[image showing  Tools -> Board -> Boards Manager]
 
 * Then, I search for 'esp32' and install the esp32 package by Expressif (specifically, I install version 2.0.14).
 
