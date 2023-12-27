@@ -127,7 +127,7 @@ const char* ssid = "**********";
 const char* password = "**********";
 ```
 * Finally, the code is ready to upload.
-* With the ESP32 plugged in, I select the correct port under Tools -> Ports
+* With the ESP32 plugged in, I select the correct port under Tools -> Ports.
 
 <img src="https://github.com/antonshpak100/ESP32-CAM_CLI/blob/main/images-for-readme/9-Selecting-port.png?raw=true" alt="image showing Tools -> Ports" width="640">
 
